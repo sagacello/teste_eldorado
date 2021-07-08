@@ -5,11 +5,11 @@ module.exports = {
         [
           {
             id: 1,
-            name: 'Foods',
+            name: 'cell',
           },
           {
             id: 2,
-            name: 'drinks',
+            name: 'computer',
           },
         ],
         { timestamps: false }
@@ -17,7 +17,7 @@ module.exports = {
     },
   
     down: async (queryInterface, _Sequelize) => {
-      await queryInterface.bulkDelete('Specialities', null, {});
+      await queryInterface.bulkDelete('Categories', null, {});
     },
   };
   
