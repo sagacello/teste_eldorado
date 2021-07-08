@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "nodemon index.js"
+    "debug": "nodemon index.js",
+    "create": "cd src && npx sequelize db:create && npx sequelize db:migrate $",
+    "drop": "cd src && npx sequelize db:drop $",
+    "seed": "cd src && npx sequelize db:seed:all $"
   },
   "repository": {
     "type": "git",
