@@ -14,7 +14,7 @@ Desafio:
     * partNumber(número): inteiro positivo;
   - Para a categoria:
     * id: gerado automaticamente, inteiro, e autoincrementado;
-    * Nome: não deve estar vazio e todas suas categorias devem ter mais de 128 caracteres;
+    * Nome: não deve estar vazio e todas suas categorias não devem ter mais de 128 caracteres;
   - Todos estes campos são obrigatórios.
   - Livre para qualquer layout mais o aplicativo deve listar todos os dispositivos e categorias, e também tem telas ou componentes que permitem ao usuário criar novas categorias e dispositivos ou excluí-los.
   - Testes no back-end não são obrigatorios, porém serão um extra valioso.
