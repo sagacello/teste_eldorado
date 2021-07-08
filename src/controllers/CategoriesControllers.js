@@ -33,7 +33,20 @@ const deleteCategoryById = async (req, res) => {
   try {
     const { id } = req.params;
     await categoriesService.deleteCategoryById(id);
-    return res.status(200).json({ message: `A categoria ${id} foi deletada com sucesso `});
+    return res
+      .status(200)
+      .json({ message: `A categoria ${id} foi deletada com sucesso ` });
+  } catch (error) {
+    return res.status(error.STATUS).json({ message: error.message });
+  }
+};
+
+const updateCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name } = req.body;
+    const newCategory = await categoriesService.updateCategory(name, id);
+    return res.status(200).json(newCategory);
   } catch (error) {
     return res.status(error.STATUS).json({ message: error.message });
   }
@@ -44,4 +57,5 @@ module.exports = {
   getAllcategories,
   getCategoryById,
   deleteCategoryById,
+  updateCategory,
 };
