@@ -11,27 +11,37 @@ const createCategory = async (req, res) => {
 };
 
 const getAllcategories = async (_req, res) => {
-    try {
-      const allCategories = await categoriesService.getAllcategories();
-      return res.status(200).json(allCategories);
-    } catch (error) {
-      return res.status(error.STATUS).json({ message: error.message });
-    }
-  };
-  
-  const getCategoryById = async (req, res) => {
-    try {
-      const { id } = req.params;
-      const categoryId = await categoriesService.getCategoryById(id);
-      return res.status(200).json(categoryId);
-    } catch (error) {
-      return res.status(error.STATUS).json({ message: error.message });
-    }
-  };
+  try {
+    const allCategories = await categoriesService.getAllcategories();
+    return res.status(200).json(allCategories);
+  } catch (error) {
+    return res.status(error.STATUS).json({ message: error.message });
+  }
+};
 
+const getCategoryById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const categoryId = await categoriesService.getCategoryById(id);
+    return res.status(200).json(categoryId);
+  } catch (error) {
+    return res.status(error.STATUS).json({ message: error.message });
+  }
+};
+
+const deleteCategoryById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await categoriesService.deleteCategoryById(id);
+    return res.status(200).json({ message: `A categoria ${id} foi deletada com sucesso `});
+  } catch (error) {
+    return res.status(error.STATUS).json({ message: error.message });
+  }
+};
 
 module.exports = {
   createCategory,
   getAllcategories,
   getCategoryById,
+  deleteCategoryById,
 };

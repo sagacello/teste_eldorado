@@ -2,8 +2,12 @@ const { Categories } = require('../models');
 
 const createCategory = async (body) => {
   const { name } = body;
-  const category = await Categories.create({ name });
-  return category;
+  try {
+    const category = await Categories.create({ name });
+    return category;
+  } catch (error) {
+    return error.message;
+  }
 };
 
 const getAllcategories = async () => {
@@ -24,8 +28,17 @@ const getCategoryById = async (id) => {
   }
 };
 
+const deleteCategoryById = async (id) => {
+  try {
+    await Categories.destroy({ where: { id } });
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   createCategory,
   getAllcategories,
   getCategoryById,
+  deleteCategoryById,
 };
