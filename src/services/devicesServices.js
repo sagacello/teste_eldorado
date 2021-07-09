@@ -1,4 +1,5 @@
 const { Devices, Categories } = require('../models');
+const { devicesValidation } = require('../validations/devicesValidation');
 
 const ERR_MESSAGE_CATEGORIES = {
   message: 'Category does not exist',
@@ -20,6 +21,7 @@ const validateDevices = async (id) => {
 };
 
 const createDevice = async (body) => {
+  devicesValidation(body)
   const { categoryId, color, partNumber } = body;
   const category = await Categories.findByPk(categoryId);
   validateCategories(category);
@@ -63,7 +65,6 @@ const deleteDeviceById = async (id) => {
 
 const updateDevice = async (color, partNumber, id) => {
   await validateDevices(id);
-  console.log( validateDevices(id))
   try {
     await Devices.update({ color, partNumber }, { where: { id } });
     const newCategory = await Devices.findByPk(id);
