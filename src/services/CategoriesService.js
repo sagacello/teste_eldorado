@@ -12,8 +12,8 @@ const createCategory = async (body) => {
 
 const getAllcategories = async () => {
   try {
-    const categories = await Categories.findAll();
-    return categories;
+    const allCategories = await Categories.findAll();
+    return allCategories;
   } catch (error) {
     return error.message;
   }
