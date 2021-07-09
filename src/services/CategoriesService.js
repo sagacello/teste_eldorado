@@ -36,9 +36,20 @@ const deleteCategoryById = async (id) => {
   }
 };
 
+const updateCategory = async (name, id) => {
+    try {
+      await Categories.update({ name }, { where: { id } });
+      const newCategory = await Categories.findByPk(id);
+      return newCategory;
+    } catch (error) {
+      return error.message;
+    }
+  };
+  
 module.exports = {
   createCategory,
   getAllcategories,
   getCategoryById,
   deleteCategoryById,
+  updateCategory,
 };
