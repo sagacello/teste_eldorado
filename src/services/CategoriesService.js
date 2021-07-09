@@ -1,7 +1,18 @@
 const { Categories } = require('../models');
+const { categoryValidation } = require('../validations/categoriesValidations');
+
+const ERR_MESSAGE_CATEGORIES = {
+  message: 'Category does not exist',
+  STATUS: 400,
+};
+
+const validateCategories = (categoryIds) => {
+  if (!categoryIds) throw ERR_MESSAGE_CATEGORIES;
+};
 
 const createCategory = async (body) => {
   const { name } = body;
+  categoryValidation(body);
   try {
     const category = await Categories.create({ name });
     return category;
@@ -37,15 +48,17 @@ const deleteCategoryById = async (id) => {
 };
 
 const updateCategory = async (name, id) => {
-    try {
-      await Categories.update({ name }, { where: { id } });
-      const newCategory = await Categories.findByPk(id);
-      return newCategory;
-    } catch (error) {
-      return error.message;
-    }
-  };
-  
+  const category = await Categories.findByPk(id);
+  validateCategories(category);
+  try {
+    await Categories.update({ name }, { where: { id } });
+    const newCategory = await Categories.findByPk(id);
+    return newCategory;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   createCategory,
   getAllcategories,
