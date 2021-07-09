@@ -25,6 +25,26 @@ const createDevice = async (body) => {
   }
 };
 
+const getAllDevices = async () => {
+  try {
+    const allDevices = await Devices.findAll();
+    return allDevices;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+const getDeviceById = async (id) => {
+  try {
+    const deviceId = await Devices.findByPk(id);
+    return deviceId;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   createDevice,
+  getAllDevices,
+  getDeviceById,
 };

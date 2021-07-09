@@ -5,12 +5,12 @@ module.exports = {
         [
           {
             color: 'red',
-            partNumber: 1,
+            partNumber: 123789,
             categoryId: 1
           },
           {
             color: 'black',
-            partNumber: 2,
+            partNumber: 1234789,
             categoryId: 2
           },
         ],
