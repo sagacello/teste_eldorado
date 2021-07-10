@@ -28,18 +28,18 @@ Desafio:
  
 ## Resolução para o back-end
   * Para a persistência no banco de dados foi utilizado (ORM) sequelize;
-  * A arquitetura utilziada na aplicação foi a MSC;
-  * Para as validações foi utilizada a biblioteca joi;
-  * Os tests foram feitos utilizando jest e supertest;
+  * A arquitetura utilziada na aplicação foi a MSC
+  * Para as validações foi utilizada a biblioteca joi
+  * Os tests foram feitos utilizando jest e supertest
   
 ## Para rodar a aplicação
   * Instale as dependências
   * Foram criados scripts que criam e populam o banco de dados:
-    - npm run drop (para dropar o banco)
-    - npm run create (para criar as migrations e models)
-    - npm run seed (para popular o banco inicialmente)
+    - npm run drop (para dropar o banco);
+    - npm run create (para criar as migrations e models);
+    - npm run seed (para popular o banco inicialmente).
   * npm start ou npm run debug para rodar em modo de desenvolvimento
   * npm run test para rodar todos os testes, ou individualmente:
-    - OBS: Não é necessario rodar os scripts de preenchimento do banco para os testes funcionarem
-    - npm test categories.test.js (para os testes das categorias)
-    - npm test devices.test.js (para os testes dos dipositivos)
+    - OBS: Não é necessario rodar os scripts de preenchimento do banco para os testes funcionarem;
+    - npm test categories.test.js (para os testes das categorias);
+    - npm test devices.test.js (para os testes dos dipositivos).
