@@ -26,13 +26,13 @@ Desafio:
   * Angular
   * Mysql
  
-## Resolução para o back-end
+## Resolução do para o back-end
   * Para a persistência no banco de dados foi utilizado (ORM) sequelize;
   * A arquitetura utilziada na aplicação foi a MSC
   * Para as validações foi utilizada a biblioteca joi
   * Os tests foram feitos utilizando jest e supertest
  
-## Esboço da aplicação
+## Esboço do relacionamneto do banco de dados
   ![Preview](https://github.com/sagacello/teste_eldorado/blob/main/esbo%C3%A7o_eldorado.png)
   
 ## Para rodar a aplicação localmente
