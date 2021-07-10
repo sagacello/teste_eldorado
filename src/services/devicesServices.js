@@ -5,7 +5,7 @@ const { devicesValidation } = require('../validations/devicesValidation');
 const existCategories = (categoryIds) => {
   ERR_MESSAGE_CATEGORIES = {
     message: 'Category does not exist',
-    STATUS: 400,
+    STATUS: 404,
   };
   if (!categoryIds) throw ERR_MESSAGE_CATEGORIES;
 };
@@ -13,13 +13,14 @@ const existCategories = (categoryIds) => {
 const existDevices = async (id) => {
   ERR_MESSAGE_DEVICES = {
     message: 'Device does not exist',
-    STATUS: 400,
+    STATUS: 404,
   };
   const deviceId = await Devices.findByPk(id);
   if (!deviceId) throw ERR_MESSAGE_DEVICES;
 };
 
 const createDevice = async (body) => {
+  console.log(body)
   devicesValidation(body)
   const { categoryId, color, partNumber } = body;
   const category = await Categories.findByPk(categoryId);
