@@ -1,7 +1,6 @@
 const { Devices, Categories } = require('../models');
 const { devicesValidation } = require('../validations/devicesValidation');
 
-
 const existCategories = (categoryIds) => {
   ERR_MESSAGE_CATEGORIES = {
     message: 'Category does not exist',
@@ -20,8 +19,8 @@ const existDevices = async (id) => {
 };
 
 const createDevice = async (body) => {
-  console.log(body)
-  devicesValidation(body)
+  console.log(body);
+  devicesValidation(body);
   const { categoryId, color, partNumber } = body;
   const category = await Categories.findByPk(categoryId);
   existCategories(category);
@@ -41,6 +40,22 @@ const getAllDevices = async () => {
   try {
     const allDevices = await Devices.findAll();
     return allDevices;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+const getAllDevicesAndCategories = async () => {
+  try {
+    const allDevicesCategory = await Devices.findAll({
+      include: [
+        {
+          model: Categories,
+          as: 'category',
+        },
+      ],
+    });
+    return allDevicesCategory;
   } catch (error) {
     return error.message;
   }
@@ -80,4 +95,5 @@ module.exports = {
   getDeviceById,
   deleteDeviceById,
   updateDevice,
+  getAllDevicesAndCategories,
 };
