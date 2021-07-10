@@ -35,6 +35,6 @@ Desafio:
 ## Para rodar a aplicação
   * Instale as dependências
   * npm start ou npm run debug para rodar em modo de desenvolvimento
-  * npm run test para rodar todos os testes ou individualmente:
+  * npm run test para rodar todos os testes, ou individualmente:
     - npm test categories.test.js (para os testes das categorias)
     - npm test devices.test.js (para os testes dos dipositivos)
