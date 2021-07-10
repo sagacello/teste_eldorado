@@ -9,6 +9,12 @@ module.exports = {
           {
             name: 'computer',
           },
+          {
+            name: 'Tv',
+          },
+          {
+            name: 'link',
+          },
         ],
         { timestamps: false }
       );
