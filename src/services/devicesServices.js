@@ -1,30 +1,30 @@
 const { Devices, Categories } = require('../models');
 const { devicesValidation } = require('../validations/devicesValidation');
 
-const ERR_MESSAGE_CATEGORIES = {
-  message: 'Category does not exist',
-  STATUS: 400,
-};
 
-const ERR_MESSAGE_DEVICES = {
-  message: 'Device does not exist',
-  STATUS: 400,
-};
-
-const validateCategories = (categoryIds) => {
+const existCategories = (categoryIds) => {
+  ERR_MESSAGE_CATEGORIES = {
+    message: 'Category does not exist',
+    STATUS: 404,
+  };
   if (!categoryIds) throw ERR_MESSAGE_CATEGORIES;
 };
 
-const validateDevices = async (id) => {
+const existDevices = async (id) => {
+  ERR_MESSAGE_DEVICES = {
+    message: 'Device does not exist',
+    STATUS: 404,
+  };
   const deviceId = await Devices.findByPk(id);
   if (!deviceId) throw ERR_MESSAGE_DEVICES;
 };
 
 const createDevice = async (body) => {
+  console.log(body)
   devicesValidation(body)
   const { categoryId, color, partNumber } = body;
   const category = await Categories.findByPk(categoryId);
-  validateCategories(category);
+  existCategories(category);
   try {
     const device = await Devices.create({
       color,
@@ -64,7 +64,7 @@ const deleteDeviceById = async (id) => {
 };
 
 const updateDevice = async (color, partNumber, id) => {
-  await validateDevices(id);
+  await existDevices(id);
   try {
     await Devices.update({ color, partNumber }, { where: { id } });
     const newCategory = await Devices.findByPk(id);

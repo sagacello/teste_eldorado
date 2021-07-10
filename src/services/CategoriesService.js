@@ -1,12 +1,11 @@
 const { Categories } = require('../models');
 const { categoryValidation } = require('../validations/categoriesValidations');
 
-const ERR_MESSAGE_CATEGORIES = {
-  message: 'Category does not exist',
-  STATUS: 400,
-};
-
-const validateCategories = (categoryIds) => {
+const existCategories = (categoryIds) => {
+  ERR_MESSAGE_CATEGORIES = {
+    message: 'Category does not exist',
+    STATUS: 400,
+  };
   if (!categoryIds) throw ERR_MESSAGE_CATEGORIES;
 };
 
@@ -49,7 +48,7 @@ const deleteCategoryById = async (id) => {
 
 const updateCategory = async (name, id) => {
   const category = await Categories.findByPk(id);
-  validateCategories(category);
+  existCategories(category);
   try {
     await Categories.update({ name }, { where: { id } });
     const newCategory = await Categories.findByPk(id);
