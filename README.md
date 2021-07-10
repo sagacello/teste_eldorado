@@ -32,8 +32,9 @@ Desafio:
   * Para as validações foi utilizada a biblioteca joi
   * Os tests foram feitos utilizando jest e supertest
   
-## Para rodar a aplicação
-  * Instale as dependências
+## Para rodar a aplicação localmente
+  * Clone o projeto e instale as dependências
+  * Coloque as suas configurações de acesso ao banco de dados no arquivo config.js dentro da src/config ou em um arquivo .env na raiz 
   * Foram criados scripts que criam e populam o banco de dados:
     - npm run drop (para dropar o banco);
     - npm run create (para criar as migrations e models);
