@@ -26,4 +26,15 @@ Desafio:
   * Angular
   * Mysql
  
- 
+## Resolução para o back-end
+  * Para a persistência no banco de dados foi utilizado (ORM) sequelize;
+  * A arquitetura utilziada na aplicação foi a MSC;
+  * Para as validações foi utilizada a biblioteca joi;
+  * Os tests foram feitos utilizando jest e supertest;
+  
+## Para rodar a aplicação
+  * Instale as dependências
+  * npm start ou npm run debug para rodar em modo de desenvolvimento
+  * npm run test para rodar todos os testes ou individualmente:
+    - npm test categories.test.js (para os testes das categorias)
+    - npm test devices.test.js (para os testes dos dipositivos)
