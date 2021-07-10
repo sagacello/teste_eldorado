@@ -9,7 +9,8 @@
     "debug": "nodemon index.js",
     "create": "cd src && npx sequelize db:create && npx sequelize db:migrate $",
     "drop": "cd src && npx sequelize db:drop $",
-    "seed": "cd src && npx sequelize db:seed:all $"
+    "seed": "cd src && npx sequelize db:seed:all $",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
