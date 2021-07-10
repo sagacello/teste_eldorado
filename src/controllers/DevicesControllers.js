@@ -29,6 +29,16 @@ const getAllDevicesAndCategories = async (_req, res) => {
   }
 };
 
+const getAllDevicesAndCategoriesFromId = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const allDevicesCategoryFromId = await devicesService.getAllDevicesAndCategoriesFromId(id);
+    return res.status(200).json(allDevicesCategoryFromId);
+  } catch (error) {
+    return res.status(error.STATUS).json({ message: error.message });
+  }
+};
+
 const getDeviceById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -70,4 +80,5 @@ module.exports = {
   deleteDeviceById,
   updateDevice,
   getAllDevicesAndCategories,
+  getAllDevicesAndCategoriesFromId,
 };

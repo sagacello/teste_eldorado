@@ -61,6 +61,26 @@ const getAllDevicesAndCategories = async () => {
   }
 };
 
+const getAllDevicesAndCategoriesFromId = async (id) => {
+  console.log(id)
+  try {
+    const allDevicesCategory = await Devices.findAll({
+      where: {
+        categoryId: id,
+      },
+      include: [
+        {
+          model: Categories,
+          as: 'category',
+        },
+      ],
+    });
+    return allDevicesCategory;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 const getDeviceById = async (id) => {
   try {
     const deviceId = await Devices.findByPk(id);
@@ -96,4 +116,5 @@ module.exports = {
   deleteDeviceById,
   updateDevice,
   getAllDevicesAndCategories,
+  getAllDevicesAndCategoriesFromId,
 };
