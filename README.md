@@ -33,7 +33,7 @@ Desafio:
   * Os tests foram feitos utilizando jest e supertest
  
 ## Esboço da aplicação
-  https://github.com/sagacello/teste_eldorado/blob/main/esbo%C3%A7o_eldorado.png
+  ![Preview](https://github.com/sagacello/teste_eldorado/blob/main/esbo%C3%A7o_eldorado.png)
   
 ## Para rodar a aplicação localmente
   * Clone o projeto e instale as dependências
