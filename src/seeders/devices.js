@@ -19,6 +19,16 @@ module.exports = {
             categoryId: 2
           },
           {
+            color: 'green',
+            partNumber: 1234289,
+            categoryId: 2
+          },
+          {
+            color: 'yellow',
+            partNumber: 1234289,
+            categoryId: 2
+          },
+          {
             color: 'black',
             partNumber: 1211789,
             categoryId: 2
@@ -40,6 +50,11 @@ module.exports = {
           },
           {
             color: 'red',
+            partNumber: 123111789,
+            categoryId: 1
+          },
+          {
+            color: 'black',
             partNumber: 123111789,
             categoryId: 1
           },
