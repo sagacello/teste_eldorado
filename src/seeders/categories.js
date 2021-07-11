@@ -4,12 +4,16 @@ module.exports = {
         'Categories',
         [
           {
-            id: 1,
             name: 'cell',
           },
           {
-            id: 2,
             name: 'computer',
+          },
+          {
+            name: 'Tv',
+          },
+          {
+            name: 'link',
           },
         ],
         { timestamps: false }

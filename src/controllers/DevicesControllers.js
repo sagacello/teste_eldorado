@@ -19,6 +19,26 @@ const getAllDevices = async (_req, res) => {
   }
 };
 
+
+const getAllDevicesAndCategories = async (_req, res) => {
+  try {
+    const allDevicesCategory = await devicesService.getAllDevicesAndCategories();
+    return res.status(200).json(allDevicesCategory);
+  } catch (error) {
+    return res.status(error.STATUS).json({ message: error.message });
+  }
+};
+
+const getAllDevicesAndCategoriesFromId = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const allDevicesCategoryFromId = await devicesService.getAllDevicesAndCategoriesFromId(id);
+    return res.status(200).json(allDevicesCategoryFromId);
+  } catch (error) {
+    return res.status(error.STATUS).json({ message: error.message });
+  }
+};
+
 const getDeviceById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -59,4 +79,6 @@ module.exports = {
   getDeviceById,
   deleteDeviceById,
   updateDevice,
+  getAllDevicesAndCategories,
+  getAllDevicesAndCategoriesFromId,
 };
