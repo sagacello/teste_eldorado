@@ -62,7 +62,6 @@ const getAllDevicesAndCategories = async () => {
 };
 
 const getAllDevicesAndCategoriesFromId = async (id) => {
-  console.log(id)
   try {
     const allDevicesCategory = await Devices.findAll({
       where: {

@@ -33,6 +33,16 @@ module.exports = {
             partNumber: 442422,
             categoryId: 3
           },
+          {
+            color: 'red',
+            partNumber: 12233789,
+            categoryId: 4
+          },
+          {
+            color: 'red',
+            partNumber: 123111789,
+            categoryId: 1
+          },
         ],
         { timestamps: false }
       );
