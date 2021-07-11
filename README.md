@@ -1,4 +1,5 @@
 # Introdução!
+![grab-landing-page](https://j.gifs.com/jYZ8vW.gif)
 
 Desafio:
   - Desenvolva uma aplicação web de gerenciamento de dispositivo simples.
@@ -35,7 +36,7 @@ Desafio:
 ## Esboço do relacionamneto do banco de dados
   ![Preview](https://github.com/sagacello/teste_eldorado/blob/main/esbo%C3%A7o_eldorado.png)
   
-## Para rodar a aplicação localmente
+## Para rodar a o back-end da aplicação localmente
   * Clone o projeto e instale as dependências
   * Coloque as suas configurações de acesso ao banco de dados no arquivo config.js dentro da src/config ou em um arquivo .env na raiz 
   * Foram criados scripts que criam e populam o banco de dados:
@@ -47,3 +48,15 @@ Desafio:
     - OBS: Não é necessario rodar os scripts de preenchimento do banco para os testes funcionarem;
     - npm test categories.test.js (para os testes das categorias);
     - npm test devices.test.js (para os testes dos dipositivos).
+    
+## Resolução do para o front-end
+  * Foi feito utilizando React e Context Api;
+  * As requisições são feitas com a biblioteca axios;
+  * Para customização foi utilizado a biblioteca semantic-ui;
+  * A arquitetura principal foi dividida em componentes e páginas, os componentes são chamados e renderizados na página principal que contém a maior parte da lógica da aplicação.
+
+## Para rodar o front end da aplicação localmente 
+  * Clone o projeto e instale as dependências;
+  * Configure as rotas das requisições dentro da pasta service de acordo com sua porta;
+  * Na pasta raiz de o comando:
+    - npm start
