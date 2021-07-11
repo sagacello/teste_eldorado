@@ -1,4 +1,5 @@
 # Introdução!
+
 ![grab-landing-page](https://j.gifs.com/jYZ8vW.gif)
 
 Desafio:
@@ -26,7 +27,7 @@ Desafio:
   * Node.js 
   * Angular
   * Mysql
- 
+### Este repositório contém o back-end da aplicação
 ## Resolução do para o back-end
   * Para a persistência no banco de dados foi utilizado (ORM) sequelize;
   * A arquitetura utilziada na aplicação foi a MSC
