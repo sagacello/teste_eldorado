@@ -37,7 +37,7 @@ Desafio:
 ## Esboço do relacionamneto do banco de dados
   ![Preview](https://github.com/sagacello/teste_eldorado/blob/main/esbo%C3%A7o_eldorado.png)
   
-## Para rodar a o back-end da aplicação localmente
+## Para rodar o back-end da aplicação localmente
   * Clone o projeto e instale as dependências
   * Coloque as suas configurações de acesso ao banco de dados no arquivo config.js dentro da src/config ou em um arquivo .env  
   * O banco de dados criado vai receber o nome de devices_management e pode ser colocado no arquivo config como: 
